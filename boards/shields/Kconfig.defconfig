@@ -1,3 +1,4 @@
+/*
 if SHIELD_TOTEM_LEFT
 
 config ZMK_KEYBOARD_NAME
@@ -14,3 +15,5 @@ config ZMK_SPLIT
     default y
 
 endif
+
+*/

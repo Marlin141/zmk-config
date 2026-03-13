@@ -1,3 +1,4 @@
+/*
 #include <physical_layouts.dtsi>
 
 / {
@@ -47,3 +48,4 @@
             ;
     };
 };
+*/
