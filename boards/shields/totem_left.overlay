@@ -1,4 +1,9 @@
 /*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include "totem.dtsi"
 
 &kscan0 {
@@ -10,4 +15,3 @@
         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
         ;
 };
-*/

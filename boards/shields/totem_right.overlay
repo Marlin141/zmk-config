@@ -1,4 +1,9 @@
 /*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include "totem.dtsi"
 
 &default_transform {
@@ -14,4 +19,3 @@
         , <&xiao_d 4 GPIO_ACTIVE_HIGH>
         ;
 };
-*/
