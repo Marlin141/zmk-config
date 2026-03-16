@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/pointing.h> // Mouse
 #include "zmk-helpers/key-labels/totem.h" // HRM + combos
 #include "zmk-helpers/unicode-chars/greek.dtsi"
+#include "zmk-helpers/unicode-chars/french.dtsi"
 
 
 #define DEF       0
@@ -188,7 +189,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
         &kp STAR      &kp N7  &kp N8        &kp N9         &kp PLUS     &kp PG_UP  NAV_BSPC    NAV_UP    NAV_DEL    &trans
         &hml LGUI N0  &kp N4  &hml LALT N5  &hml LSHFT N6  &kp EQUAL    &kp PG_DN  NAV_LEFT    NAV_DOWN  NAV_RIGHT  &kp RET
 &trans  &kp FSLH      &kp N1  &kp N2        &kp N3         &kp MINUS    &kp INS    &kp TAB     &trans    &trans     &trans  &trans
-                              &trans        &uc UC_EL_ALPHA   &trans       &trans     &trans      &trans
+                              &uc UC_FR_E_GRAVE   &uc UC_EL_ALPHA   &trans       &trans     &trans      &trans
             >;
         };
 
@@ -197,7 +198,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
         &trans  &trans     &trans          &msc SCRL_UP    &trans             &msc SCRL_UP    &trans          &mmv MOVE_UP    &trans           &trans
         &trans  &mkp MCLK  &mkp RCLK       &mkp LCLK       &trans             &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT
 &trans  &trans  &trans     &trans          &msc SCRL_DOWN  &trans             &msc SCRL_DOWN  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
-                           &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT    &trans          &trans          &trans
+                           &trans          &trans          &trans             &trans          &trans          &trans
             >;
         };
 

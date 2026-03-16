@@ -14,6 +14,12 @@
         }; \
     };
 
+
+/* 
+LEADER KEY IS A CUSTOM BEHAVIOR, THIS MEANS THAT IF THERE IS ANY ERRORS IN THIS FILE 
+IT WILL COMPILE WITHOUT ERRORS BUT THE KEYBOARD WILL CRASH WHEN THE LEADER KEY IS PRESSED
+ */
+
 /* German umlauts 
 ZMK_LEADER_SEQUENCE(de_ae,      &uc UC_DE_AE,         A)  // ä
 ZMK_LEADER_SEQUENCE(de_oe,      &uc UC_DE_OE,         O)  // ö
@@ -48,15 +54,7 @@ ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        E Y)  // ψ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
 */
 
-/*
-// BLE and USB
-#ifdef CONFIG_WIRELESS
-ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
-ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
-#endif // CONFIG_WIRELESS
-ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
-ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
-*/
+
 
 /* Fn keys (these follow the num pad in terms of layout) */
 ZMK_LEADER_SEQUENCE(fn_f1,  &kp F1,  F X)
@@ -71,3 +69,12 @@ ZMK_LEADER_SEQUENCE(fn_f9,  &kp F9,  F P)
 ZMK_LEADER_SEQUENCE(fn_f10, &kp F10, F V)
 ZMK_LEADER_SEQUENCE(fn_f11, &kp F11, F G)
 ZMK_LEADER_SEQUENCE(fn_f12, &kp F12, F B)
+
+/*BLE and USB*/
+ZMK_LEADER_SEQUENCE(clear       &bt BT_CLR,     C L E A R)
+ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
+ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
+ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
+ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
+
+
