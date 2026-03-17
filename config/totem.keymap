@@ -191,7 +191,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
         NAV {
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans         &kp PG_UP  NAV_UP    NAV_DEL    &trans
-        &trans  &trans  &trans  &trans  &trans    &kp caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
+        &trans  &trans  &trans  &trans  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
 &trans  &trans  &trans  &trans  &trans  &trans    &trans         &kp TAB    &kp INS   &trans     &trans  &trans
                         &trans  &trans  &trans    &trans         &trans     &trans
             >;
