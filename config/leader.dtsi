@@ -27,9 +27,11 @@ ZMK_LEADER_SEQUENCE(de_ue,      &uc UC_DE_UE,         U)  // ü
 ZMK_LEADER_SEQUENCE(de_eszett,  &uc UC_DE_SS,         S)  // ß
 */
 
-/* Greek letters 
+
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      E A)  // α
 ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       E B)  // β
+
+/* Greek letters 
 ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      E G)  // γ
 ZMK_LEADER_SEQUENCE(el_delta,   &uc UC_EL_DELTA,      E D)  // δ
 ZMK_LEADER_SEQUENCE(el_epsilon, &uc UC_EL_EPSILON,    E E)  // ε

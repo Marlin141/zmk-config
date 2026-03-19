@@ -13,10 +13,10 @@
 #include "zmk-helpers/unicode-chars/french.dtsi"
 
 
-#define DEF       0
-#define NUM       1 
-#define NAV       2 
-#define Mouse     4
+#define OFF       0 // Nothing on this layer
+#define DEF       1 // Colemak dh
+#define NUM       2 // Number keys + Navigation 
+#define NAV       3 // Mouse movement
 #define Func      5 // Bt + brightness + sound
 #define Game      6 // Never really used
 
@@ -70,7 +70,7 @@ ZMK_HOLD_TAP(hmr,
 
 /* Home row mods for shift */
 // Uses faster tapping term and disables some features that may cause false negatives.
-ZMK_HOLD_TAP(hm_shft_l,
+ZMK_HOLD_TAP(hmls,
     flavor = "balanced";
     tapping-term-ms = <HM_TAPPING_TERM_FAST>; 
     quick-tap-ms = <175>;
@@ -79,7 +79,7 @@ ZMK_HOLD_TAP(hm_shft_l,
     hold-trigger-key-positions = <KEYS_R THUMBS>;
 )
 
-ZMK_HOLD_TAP(hm_shft_r,
+ZMK_HOLD_TAP(hmrs,
     flavor = "balanced";
     tapping-term-ms = <HM_TAPPING_TERM_FAST>; 
     quick-tap-ms = <175>;
@@ -168,36 +168,34 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 / {
     keymap {
-        compatible = "zmk,keymap";
-
+        compatible = "zmk,keymap"; 
+        OFF {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
         DEF {
             bindings = <
-         &kp Q       &kp W       &kp F         &kp P               &kp B       &kp J    &kp L               &kp U         &kp Y       &kp SQT
-         &hml LGUI A &hml LALT R &hml LCTRL S  &hm_shft_l LSHFT T  &kp G       &kp M    &hm_shft_r RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
-&kp ESC  &kp Z       &kp X       &kp C         &kp D               &kp V       &kp K    &kp H               &comma_morph  &dot_morph  &excl_morph   &caps_word
-                                 &lt 4 DEL     &lt 2 BACKSPACE     &lt 3 TAB   &kp RET  &lt 1 SPACE         &kp RSFT
-            >;                /* Func          NAV                 MOUSE                 NUM                (to be special shift)*/
+         &kp Q       &kp W       &kp F         &kp P            &kp B       &kp J    &kp L          &kp U         &kp Y       &kp SQT
+         &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T    &kp G       &kp M    &hmrs RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
+&kp ESC  &kp Z       &kp X       &kp C         &kp D            &kp V       &kp K    &kp H          &comma_morph  &dot_morph  &excl_morph   &caps_word
+                                 &lt 4 DEL     &kp BACKSPACE  &lt 3 TAB   &kp RET    &lt 1 SPACE    &kp RSFT
+            >;                /* Func                         MOUSE                NUM NAV        (to be special shift)*/
         };
 
         NUM {
             bindings = <
-        &trans        &kp N7        &kp N8         &kp N9         &trans    &trans  &trans  &trans  &trans  &trans
-        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                    &trans         &trans         &trans    &trans  &trans  &trans
+        &trans        &kp N7        &kp N8         &kp N9         &trans    &kp PG_UP   NAV_BSPC   NAV_UP    NAV_DEL    &trans
+        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &hmr RGUI RET
+&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &kp PG_DN   &kp TAB    &kp INS   &trans     &trans  &trans
+                                    &trans         &trans         &trans    &trans      &trans     &trans
             >;
         };
 
         NAV {
-            bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans      &kp PG_UP  NAV_UP    NAV_DEL    &trans
-        &trans  &trans  &trans  &trans  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
-&trans  &trans  &trans  &trans  &trans  &trans    &trans      &kp TAB    &kp INS   &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans      &trans     &trans
-            >;
-        };
-
-        Mouse {
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &trans          &mmv MOVE_UP    &trans           &trans
         &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT
@@ -208,10 +206,10 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
         Func {
             bindings = <
-        &trans  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_SEL 1    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans        &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans        &trans        &trans          &trans  &trans  &trans
+        &trans  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &bt BT_SEL 0    &trans  &trans     &trans     &trans    &trans
+        &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_SEL 1    &trans  &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI
+&trans  &trans  &trans  &trans        &to 0         &bt BT_SEL 2    &trans  &trans     &trans     &trans    &trans    &trans
+                        &trans        &trans        &trans          &trans  &trans     &trans
             >;
         };
 
@@ -223,5 +221,6 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
+
     };
 };
