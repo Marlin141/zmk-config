@@ -13,12 +13,11 @@
 #include "zmk-helpers/unicode-chars/french.dtsi"
 
 
-#define OFF       0 // Nothing on this layer
-#define DEF       1 // Colemak dh
-#define NUM       2 // Number keys + Navigation 
-#define NAV       3 // Mouse movement
-#define Func      5 // Bt + brightness + sound
-#define Game      6 // Never really used
+#define DEF       0 // Colemak dh
+#define NUM       1 // Number keys + Navigation 
+#define NAV       2 // Mouse movement
+#define Func      3 // Bt + brightness + sound
+#define Game      4 // Never really used
 
 
 /*                     KEY POSITIONS
@@ -169,21 +168,13 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 / {
     keymap {
         compatible = "zmk,keymap"; 
-        OFF {
-            bindings = <
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
         DEF {
             bindings = <
          &kp Q       &kp W       &kp F         &kp P            &kp B       &kp J    &kp L          &kp U         &kp Y       &kp SQT
          &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T    &kp G       &kp M    &hmrs RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 &kp ESC  &kp Z       &kp X       &kp C         &kp D            &kp V       &kp K    &kp H          &comma_morph  &dot_morph  &excl_morph   &caps_word
-                                 &lt 4 DEL     &kp BACKSPACE  &lt 3 TAB   &kp RET    &lt 1 SPACE    &kp RSFT
-            >;                /* Func                         MOUSE                NUM NAV        (to be special shift)*/
+                                 &lt 3 DEL     &lt 2 BACKSPACE  &kp TAB   &kp RET    &lt 1 SPACE    &kp RSFT
+            >;                /* Func          MOUSE                                 NUM NAV        (to be special shift)*/
         };
 
         NUM {
@@ -208,7 +199,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
             bindings = <
         &trans  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &bt BT_SEL 0    &trans  &trans     &trans     &trans    &trans
         &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_SEL 1    &trans  &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI
-&trans  &trans  &trans  &trans        &to 0         &bt BT_SEL 2    &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans  &trans  &trans        &trans        &bt BT_SEL 2    &trans  &trans     &trans     &trans    &trans    &trans
                         &trans        &trans        &trans          &trans  &trans     &trans
             >;
         };
