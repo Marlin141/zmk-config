@@ -14,51 +14,58 @@
         }; \
     };
 
-
 /* 
 LEADER KEY IS A CUSTOM BEHAVIOR, THIS MEANS THAT IF THERE IS ANY ERRORS IN THIS FILE 
 IT WILL COMPILE WITHOUT ERRORS BUT THE KEYBOARD WILL CRASH WHEN THE LEADER KEY IS PRESSED
  */
 
-/* German umlauts 
-ZMK_LEADER_SEQUENCE(de_ae,      &uc UC_DE_AE,         A)  // ä
-ZMK_LEADER_SEQUENCE(de_oe,      &uc UC_DE_OE,         O)  // ö
-ZMK_LEADER_SEQUENCE(de_ue,      &uc UC_DE_UE,         U)  // ü
-ZMK_LEADER_SEQUENCE(de_eszett,  &uc UC_DE_SS,         S)  // ß
-*/
+// 24+16+12+5=57
 
+/* (24) Greek letters (N sits under right finger / easy to acess) */
+ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      N A)  // α
+ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       N B)  // β
+ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      N G)  // γ 
+ZMK_LEADER_SEQUENCE(el_delta,   &uc UC_EL_DELTA,      N D)  // δ
+ZMK_LEADER_SEQUENCE(el_epsilon, &uc UC_EL_EPSILON,    N E)  // ε
+ZMK_LEADER_SEQUENCE(el_zeta,    &uc UC_EL_ZETA,       N Z)  // ζ
+ZMK_LEADER_SEQUENCE(el_eta,     &uc UC_EL_ETA,        N H)  // η
+ZMK_LEADER_SEQUENCE(el_theta,   &uc UC_EL_THETA,      N V)  // θ
+ZMK_LEADER_SEQUENCE(el_iota,    &uc UC_EL_IOTA,       N I)  // ι
+ZMK_LEADER_SEQUENCE(el_kappa,   &uc UC_EL_KAPPA,      N K)  // κ
+ZMK_LEADER_SEQUENCE(el_lambda,  &uc UC_EL_LAMBDA,     N L)  // λ
+ZMK_LEADER_SEQUENCE(el_mu,      &uc UC_EL_MU,         N M)  // μ
+ZMK_LEADER_SEQUENCE(el_nu,      &uc UC_EL_NU,         N N)  // ν
+ZMK_LEADER_SEQUENCE(el_xi,      &uc UC_EL_XI,         N X)  // ξ
+ZMK_LEADER_SEQUENCE(el_omikron, &uc UC_EL_OMIKRON,    N O)  // ο
+ZMK_LEADER_SEQUENCE(el_pi,      &uc UC_EL_PI,         N P)  // π
+ZMK_LEADER_SEQUENCE(el_rho,     &uc UC_EL_RHO,        N R)  // ρ
+ZMK_LEADER_SEQUENCE(el_sigma,   &uc UC_EL_SIGMA,      N S)  // σ
+ZMK_LEADER_SEQUENCE(el_tau,     &uc UC_EL_TAU,        N T)  // τ
+ZMK_LEADER_SEQUENCE(el_upsilon, &uc UC_EL_UPSILON,    N U)  // υ
+ZMK_LEADER_SEQUENCE(el_phi,     &uc UC_EL_PHI,        N F)  // ϕ
+ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        N C)  // χ
+ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        N Y)  // ψ
+ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      N W)  // ω
 
+/* (16) French symbols */
+ZMK_LEADER_SEQUENCE(fr_ae,           &uc UC_FR_AE,           A E)  // æ/Æ
+ZMK_LEADER_SEQUENCE(fr_oe,           &uc UC_FR_OE,           O E)  // œ/Œ
+ZMK_LEADER_SEQUENCE(fr_a_grave,      &uc UC_FR_A_GRAVE,      A G)  // à/À
+ZMK_LEADER_SEQUENCE(fr_a_circumflex, &uc UC_FR_A_CIRCUMFLEX, A C)  // â/Â
+ZMK_LEADER_SEQUENCE(fr_c_cedilla,    &uc UC_FR_C_CEDILLA,    C S)  // ç/Ç
+ZMK_LEADER_SEQUENCE(fr_e_grave,      &uc UC_FR_E_GRAVE,      E G)  // è/È
+ZMK_LEADER_SEQUENCE(fr_e_acute,      &uc UC_FR_E_ACUTE,      E A)  // é/É
+ZMK_LEADER_SEQUENCE(fr_e_circumflex, &uc UC_FR_E_CIRCUMFLEX, E C)  // ê/Ê
+ZMK_LEADER_SEQUENCE(fr_e_diaeresis,  &uc UC_FR_E_DIAERESIS,  E D)  // ë/Ë
+ZMK_LEADER_SEQUENCE(fr_i_circumflex, &uc UC_FR_I_CIRCUMFLEX, I C)  // î/Î
+ZMK_LEADER_SEQUENCE(fr_i_diaeresis,  &uc UC_FR_I_DIAERESIS,  I D)  // ï/Ï
+ZMK_LEADER_SEQUENCE(fr_o_circumflex, &uc UC_FR_O_CIRCUMFLEX, O C)  // ô/Ô
+ZMK_LEADER_SEQUENCE(fr_u_grave,      &uc UC_FR_U_GRAVE,      U G)  // ù/Ù
+ZMK_LEADER_SEQUENCE(fr_u_circumflex, &uc UC_FR_U_CIRCUMFLEX, U C)  // û/Û
+ZMK_LEADER_SEQUENCE(fr_u_diaeresis,  &uc UC_FR_U_DIAERESIS,  U D)  // ü/Ü
+ZMK_LEADER_SEQUENCE(fr_y_diaeresis,  &uc UC_FR_Y_DIAERESIS,  Y D)  // ÿ/Ÿ
 
-/* Greek letters */
-ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      E A)  // α
-ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       E B)  // β
-ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      E G)  // γ
-ZMK_LEADER_SEQUENCE(el_delta,   &uc UC_EL_DELTA,      E D)  // δ
-ZMK_LEADER_SEQUENCE(el_epsilon, &uc UC_EL_EPSILON,    E E)  // ε
-ZMK_LEADER_SEQUENCE(el_zeta,    &uc UC_EL_ZETA,       E Z)  // ζ
-ZMK_LEADER_SEQUENCE(el_eta,     &uc UC_EL_ETA,        E H)  // η
-ZMK_LEADER_SEQUENCE(el_theta,   &uc UC_EL_THETA,      E V)  // θ
-ZMK_LEADER_SEQUENCE(el_iota,    &uc UC_EL_IOTA,       E I)  // ι
-ZMK_LEADER_SEQUENCE(el_kappa,   &uc UC_EL_KAPPA,      E K)  // κ
-ZMK_LEADER_SEQUENCE(el_lambda,  &uc UC_EL_LAMBDA,     E L)  // λ
-ZMK_LEADER_SEQUENCE(el_mu,      &uc UC_EL_MU,         E M)  // μ
-ZMK_LEADER_SEQUENCE(el_nu,      &uc UC_EL_NU,         E N)  // ν
-ZMK_LEADER_SEQUENCE(el_xi,      &uc UC_EL_XI,         E X)  // ξ
-ZMK_LEADER_SEQUENCE(el_omikron, &uc UC_EL_OMIKRON,    E O)  // ο
-ZMK_LEADER_SEQUENCE(el_pi,      &uc UC_EL_PI,         E P)  // π
-ZMK_LEADER_SEQUENCE(el_rho,     &uc UC_EL_RHO,        E R)  // ρ
-ZMK_LEADER_SEQUENCE(el_sigma,   &uc UC_EL_SIGMA,      E S)  // σ
-ZMK_LEADER_SEQUENCE(el_tau,     &uc UC_EL_TAU,        E T)  // τ
-ZMK_LEADER_SEQUENCE(el_upsilon, &uc UC_EL_UPSILON,    E U)  // υ
-ZMK_LEADER_SEQUENCE(el_phi,     &uc UC_EL_PHI,        E F)  // ϕ
-ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        E C)  // χ
-ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        E Y)  // ψ
-ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
-
-
-
-
-/* Fn keys (these follow the num pad in terms of layout) */
+/* (12) Fn keys (Layout follows num pad) */
 ZMK_LEADER_SEQUENCE(fn_f1,  &kp F1,  F X)
 ZMK_LEADER_SEQUENCE(fn_f2,  &kp F2,  F C)
 ZMK_LEADER_SEQUENCE(fn_f3,  &kp F3,  F D)
@@ -72,7 +79,7 @@ ZMK_LEADER_SEQUENCE(fn_f10, &kp F10, F V)
 ZMK_LEADER_SEQUENCE(fn_f11, &kp F11, F G)
 ZMK_LEADER_SEQUENCE(fn_f12, &kp F12, F B)
 
-/*BLE and USB*/
+/* (5) BLE and USB*/
 ZMK_LEADER_SEQUENCE(clear,      &bt BT_CLR,     C L E A R)
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
 ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
