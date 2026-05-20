@@ -6,7 +6,6 @@
       ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
               ╰─────────────╯ ╰─────────────╯ */
 
-
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 
@@ -14,13 +13,11 @@
 #define COMBO_IDLE_SLOW 50
 
 
-
 /* Horizontal combos - left hand */
 ZMK_COMBO(ldr,   &leader,      LM2 LM1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-/* I dont really know what this does */
 ZMK_COMBO(ldrsh, &leader_sft,  LM3 LM2 LM1, DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(cut,   &kp LC(X),    LB3 LB1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cut,   &kp LC(X),    LB3 LB1,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(copy,  &kp LC(C),    LB3 LB2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(pasteNF, &kp LC(LS(V)), LB3 LB2 LB1,  DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(paste, &kp LC(V),    LB2 LB1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
