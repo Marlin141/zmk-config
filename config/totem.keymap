@@ -87,8 +87,6 @@ ZMK_HOLD_TAP(hmrs,
     hold-trigger-key-positions = <KEYS_L THUMBS>;
 )
 
-
-
 /* Caps Word Settings */
 &caps_word {
     // Allow caps word to continue even when minus or underscore
@@ -163,6 +161,9 @@ MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
 MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 
+// Alt+Tab swapper, requires tri-state module.
+ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
 
 
 / {
