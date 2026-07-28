@@ -170,7 +170,7 @@ ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog NAV>, <&none>, <&tog NAV>; // MOUSE
     ignored-key-positions =
         // <LT1 LT2 LH0 LH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>; 
-        <LT1 LT2 LH0 LH1 LH3 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1 LM1 LM2 LM3 RT0 RM0 RB0>; 
+        <LT1 LT2 LH0 LH1 LH3 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1 LM1 LM2 LM3 RT0 RB0>; 
     ignored-layers = <NUM NAV FN>;) // MOUSE NAV FN
 
 
