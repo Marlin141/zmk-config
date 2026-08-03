@@ -14,7 +14,7 @@
 
 
 /* Horizontal combos - left hand */
-ZMK_COMBO(esc,   &kp ESC,      LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(esc,   &kp ESC,      LT3 LT2,     DEF NAV NUM,              20, COMBO_IDLE_FAST)
 ZMK_COMBO(mouse, &smart_mouse, LT2 LT1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(ldr,   &leader,      LM2 LM1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -33,7 +33,6 @@ ZMK_COMBO(rpar,  &rpar_gt,     RM2 RM3,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_
 // Thses combos have an increased activation time as you never roll on them (keys H , . )
 ZMK_COMBO(lbrc,  &lbrc_lbkt,   RB1 RB2,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) 
 ZMK_COMBO(rbrc,  &rbrc_rbkt,   RB2 RB3,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
 
 /* Vertical combos - left hand */
 ZMK_COMBO(at,    &kp AT,       LT3 LM3,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
