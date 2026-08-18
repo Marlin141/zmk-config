@@ -11,7 +11,11 @@
 #include "zmk-helpers/key-labels/totem.h" // HRM + combos
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 #include "zmk-helpers/unicode-chars/french.dtsi"
+//#include "zmk-helpers/unicode-chars/latin_1_supplement.dtsi"
+//#include <behaviors/unicode.dtsi>
 
+//#include <zmk-unicode/keys-extra.h>  // All glyphs except CJK
+#include <zmk-unicode/keys-full.h>   // All glyphs including CJK
 
 #define DEF       0 // Colemak dh
 #define NUM       1 // Number keys + Navigation
