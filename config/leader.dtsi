@@ -19,9 +19,9 @@ LEADER KEY IS A CUSTOM BEHAVIOR, THIS MEANS THAT IF THERE IS ANY ERRORS IN THIS 
 IT WILL COMPILE WITHOUT ERRORS BUT THE KEYBOARD WILL CRASH WHEN THE LEADER KEY IS PRESSED
  */
 
-// 24+16+12+5=57
+// 24+1+16+12+5=58
 
-/* (24) Greek letters (N sits under right finger / easy to acess) */
+/* (24) Greek letters (N sits under right index finger / easy to acess) */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      N A)  // α
 ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       N B)  // β
 ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      N G)  // γ 
@@ -46,6 +46,10 @@ ZMK_LEADER_SEQUENCE(el_phi,     &uc UC_EL_PHI,        N F)  // ϕ
 ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        N C)  // χ
 ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        N Y)  // ψ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      N W)  // ω
+
+/* (1) Other symbols */
+ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_DEGREE_SIGN,   O O)  // °
+
 
 /* (16) French symbols */
 ZMK_LEADER_SEQUENCE(fr_ae,           &uc UC_FR_AE,           A E)  // æ/Æ
