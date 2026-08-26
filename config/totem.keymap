@@ -196,7 +196,7 @@ ZMK_TRI_STATE(
 
         NUM2 { // Just nav
             bindings = <
-        &kp LA(F4)  &trans    &kp LS(TAB)  &swapper   &trans    &kp CLCK    &PG_UP     NAV_UP    &trans     &trans
+        &kp LA(F4)  &trans    &kp LS(TAB)  &swapper   &trans    &kp CAPS    &PG_UP     NAV_UP    &trans     &trans
         &sk LGUI    &sk LALT  &sk LCTRL    &sk LSHFT  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
 &trans  &trans      &trans    &trans       &kp N3     &trans    &TAB        &PG_DN     &kp INS   &trans     &trans  &trans
                               &trans       &trans     &trans    &trans      &trans     &trans
