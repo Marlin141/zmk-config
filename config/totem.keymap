@@ -42,16 +42,18 @@
 };
 
 
-
 /* Homerow mods */
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS, )                                 \
+#define MAKE_HRM(NAME, HOLD, TAP, TAPPING_TERM, TRIGGER_POS)                   \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <280>; quick-tap-ms = <175>;         \
+               tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <175>;         \
                require-prior-idle-ms = <150>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+MAKE_HRM(hml, &kp, &kp, 280, KEYS_R THUMBS) // Left-hand
+MAKE_HRM(hmr, &kp, &kp, 280, KEYS_L THUMBS) // Right-hand
+
+MAKE_HRM(hmls, &kp, &kp, 200, KEYS_R THUMBS) // Left-hand shift
+MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 
 
 
@@ -60,8 +62,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
 
-
- Left-hand HRMs. 
+Left-hand HRMs. 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <HM_TAPPING_TERM>;
@@ -69,17 +70,6 @@ ZMK_HOLD_TAP(hml,
     require-prior-idle-ms = <HM_PRIOR_IDLE>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
-)
-
-/* Right-hand HRMs. 
-ZMK_HOLD_TAP(hmr,
-    flavor = "balanced";
-    tapping-term-ms = <HM_TAPPING_TERM>; 
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <HM_PRIOR_IDLE>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
@@ -94,17 +84,6 @@ ZMK_HOLD_TAP(hmls,
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
 )
-
-ZMK_HOLD_TAP(hmrs,
-    flavor = "balanced";
-    tapping-term-ms = <HM_TAPPING_TERM_FAST>; 
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <HM_PRIOR_IDLE>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-)
-
-
 */
 
 /* Caps Word Settings */
@@ -199,10 +178,10 @@ ZMK_TRI_STATE(
         compatible = "zmk,keymap"; 
         DEF {
             bindings = <
-         &kp Q       &kp W       &kp F         &kp P            &kp B       &kp J    &kp L          &kp U         &kp Y       &kp SQT
-         &hml LGUI A &hml LALT R &hml LCTRL S  &hml LSHFT T     &kp G       &kp M    &hmr RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
-&trans   &kp Z       &kp X       &kp C         &kp D            &kp V       &kp K    &kp H          &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt 4 DEL     &lt 2 BACKSPACE  &kp TAB     &kp RET  &lt 1 SPACE    &kp Z
+         &kp Q       &kp W       &kp F         &kp P            &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
+         &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T    &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
+&trans   &kp Z       &kp X       &kp C         &kp D            &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
+                                 &lt 4 DEL     &lt 2 BACKSPACE  &kp TAB     &kp RET  &lt 1 SPACE     &kp Z
             >;                /* Func          MOUSE                                 NUM NAV */
         };
 
