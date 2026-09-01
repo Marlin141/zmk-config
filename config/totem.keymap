@@ -56,6 +56,11 @@ MAKE_HRM(hmls, &kp, &kp, 200, KEYS_R THUMBS) // Left-hand shift
 MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 
 
+// Make HRM combos tap-only (makes combos better)
+#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
+
 
 /* Home row mod settings 
 #define HM_TAPPING_TERM 300         // The amount of time that the key has to be held to trigger the moddifier 
@@ -73,7 +78,6 @@ ZMK_HOLD_TAP(hml,
     hold-trigger-on-release;
 )
 
-
 /* Home row mods for shift 
 // Uses faster tapping term and disables some features that may cause false negatives.
 ZMK_HOLD_TAP(hmls,
@@ -85,6 +89,7 @@ ZMK_HOLD_TAP(hmls,
     hold-trigger-key-positions = <KEYS_R THUMBS>;
 )
 */
+
 
 /* Caps Word Settings */
 &caps_word {
@@ -187,9 +192,9 @@ ZMK_TRI_STATE(
 
         NUM { // Num + nav
             bindings = <
-        &kp ESC       &kp N7        &kp N8         &kp N9         &trans    &kp PG_UP   NAV_BSPC   NAV_UP    NAV_DEL    &trans
-        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &hmr RGUI RET
-&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &kp PG_DN   &kp TAB    &kp INS   &trans     &trans  &trans
+        &kp ESC       &kp N7        &kp N8         &kp N9         &trans    &kp CAPS    &kp PG_UP  NAV_UP    &trans     &trans
+        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
+&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &kp TAB     &kp PG_DN  &kp INS   &trans     &trans  &trans
                                     &trans         &trans         &trans    &trans      &trans     &trans
             >;
         };
