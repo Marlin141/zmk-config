@@ -43,11 +43,15 @@
 
 
 /* Homerow mods */
-#define MAKE_HRM(NAME, HOLD, TAP, TAPPING_TERM, TRIGGER_POS)                   \
-  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <175>;         \
-               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
-               hold-trigger-key-positions = <TRIGGER_POS>;)
+#define MAKE_HRM(NAME, HOLD, TAP, TAPPING_TERM, TRIGGER_POS)    \
+  ZMK_HOLD_TAP(NAME,                                            \
+    bindings = <HOLD>, <TAP>;                                   \
+    flavor = "balanced";                                        \
+    tapping-term-ms = <TAPPING_TERM>;                           \
+    quick-tap-ms = <175>;                                       \
+    require-prior-idle-ms = <150>;                              \
+    hold-trigger-on-release;                                    \
+    hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, 280, KEYS_R THUMBS) // Left-hand
 MAKE_HRM(hmr, &kp, &kp, 280, KEYS_L THUMBS) // Right-hand
@@ -58,7 +62,7 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 
 // Make HRM combos tap-only (makes combos better)
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
-  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, 150, SIDE THUMBS)                        \
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
