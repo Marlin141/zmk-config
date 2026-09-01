@@ -62,6 +62,13 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
+
+#include "combos.dtsi" // Must be referanced after hrm hack above
+#include "leader.dtsi"
+// #include "mouse.dtsi"
+
+
+
 /* Home row mod settings 
 #define HM_TAPPING_TERM 300         // The amount of time that the key has to be held to trigger the moddifier 
 #define HM_TAPPING_TERM_FAST 200
@@ -131,10 +138,7 @@ SIMPLE_MORPH(rbrc_rbkt, SFT, &kp RBRC, &kp RBKT)
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;) 
 
 
-// Some things are moved into other files to reduce clutter
-#include "combos.dtsi"
-#include "leader.dtsi"
-// #include "mouse.dtsi"
+
 
 
 
