@@ -33,8 +33,7 @@
       ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
               ╰─────────────╯ ╰─────────────╯ */
 
-
-
+              
 &lt {
   flavor = "balanced";
   tapping-term-ms = <200>;
@@ -66,10 +65,10 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
-
 #include "combos.dtsi" // Must be referanced after hrm hack above
 #include "leader.dtsi"
 // #include "mouse.dtsi"
+
 
 /* Caps Word Settings */
 &caps_word {
@@ -83,6 +82,7 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
       BACKSPACE
     >;
 };
+
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -107,12 +107,9 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 SIMPLE_MORPH(lbrc_lbkt, SFT, &kp LBRC, &kp LBKT)
 SIMPLE_MORPH(rbrc_rbkt, SFT, &kp RBRC, &kp RBKT)
 
+
 // Sticky shift + leader. (for typing special characters in upper case)
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;) 
-
-
-
-
 
 
 // Trigger tap-action on all interrupts.
