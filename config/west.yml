@@ -2,7 +2,6 @@ manifest:
   defaults:
     revision: v0.3 # This defines the global revision
 
-
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware            

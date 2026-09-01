@@ -19,11 +19,9 @@ LEADER KEY IS A CUSTOM BEHAVIOR, THIS MEANS THAT IF THERE IS ANY ERRORS IN THIS 
 IT WILL COMPILE WITHOUT ERRORS BUT THE KEYBOARD WILL CRASH WHEN THE LEADER KEY IS PRESSED
  */
 
-// 14+1+16+12+5=48
+// 15+1+16+12+3=47
 
-
-
-/* (14) Greek letters (following latex syntax) */
+/* (15) Greek letters (following latex syntax) */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      N A)  // α
 ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       N B)  // β
 ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      N G)  // γ 
@@ -38,6 +36,7 @@ ZMK_LEADER_SEQUENCE(el_lambda,  &uc UC_EL_LAMBDA,     N L)  // λ
 ZMK_LEADER_SEQUENCE(el_sigma,   &uc UC_EL_SIGMA,      N S)  // σ
 ZMK_LEADER_SEQUENCE(el_upsilon, &uc UC_EL_UPSILON,    N U)  // υ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      N W)  // ω
+ZMK_LEADER_SEQUENCE(el_pi,      &uc UC_EL_PI,         N P)  // π
 
 /*
 ZMK_LEADER_SEQUENCE(el_eta,     &uc UC_EL_ETA,        N H)  // η
@@ -45,7 +44,6 @@ ZMK_LEADER_SEQUENCE(el_mu,      &uc UC_EL_MU,         N M)  // μ
 ZMK_LEADER_SEQUENCE(el_nu,      &uc UC_EL_NU,         N N)  // ν
 ZMK_LEADER_SEQUENCE(el_xi,      &uc UC_EL_XI,         N X)  // ξ
 ZMK_LEADER_SEQUENCE(el_omikron, &uc UC_EL_OMIKRON,    N O)  // ο
-ZMK_LEADER_SEQUENCE(el_pi,      &uc UC_EL_PI,         N P)  // π
 ZMK_LEADER_SEQUENCE(el_rho,     &uc UC_EL_RHO,        N R)  // ρ
 ZMK_LEADER_SEQUENCE(el_phi,     &uc UC_EL_PHI,        N F)  // ϕ
 ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        N C)  // χ
@@ -87,11 +85,7 @@ ZMK_LEADER_SEQUENCE(fn_f10, &kp F10, F V)
 ZMK_LEADER_SEQUENCE(fn_f11, &kp F11, F G)
 ZMK_LEADER_SEQUENCE(fn_f12, &kp F12, F B)
 
-/* (5) BLE and USB*/
+/* (3) BLE and USB*/
 ZMK_LEADER_SEQUENCE(clear,      &bt BT_CLR,     C L E A R)
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
 ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
-ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
-ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
-
-
