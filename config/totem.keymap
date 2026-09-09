@@ -183,10 +183,10 @@ ZMK_TRI_STATE(
 
         NAV {
             bindings = <
-        &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans      &SCRL_UP    &MOVE_UP    &SCRL_DOWN   &trans
-        &trans  &mkp RCLK  &mkp MCLK    &mkp LCLK  &trans     &SCRL_LEFT  &MOVE_LEFT  &MOVE_DOWN  &MOVE_RIGHT  &SCRL_RIGHT
-&trans  &trans  &trans     &trans       &trans     &trans     &trans      &mkp LCLK   &mkp MCLK   &mkp RCLK    &trans  &trans
-                           &trans       &trans     &trans     &SCRL_UP    &SCRL_DOWN  &trans
+        &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans      &kp PG_UP  &U_MS_U     &kp PG_DN    &trans
+        &trans  &mkp RCLK  &mkp MCLK    &mkp LCLK  &trans     &U_WH_L     &U_MS_L    &U_MS_D     &U_MS_R      &U_WH_R   
+&trans  &trans  &trans     &trans       &trans     &trans     &trans      &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans  &trans
+                           &trans       &trans     &trans     &U_WH_U     &U_WH_D    &trans
             >;
         };
 
