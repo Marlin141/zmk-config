@@ -1,11 +1,19 @@
-#include <dt-bindings/zmk/pointing.h> // Mouse
-
-
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+// Based on @caksoylar's config, defaults in comments
+&mmv {
+  acceleration-exponent = <1>;          // 1
+  time-to-max-speed-ms = <500>;         // 300
+  delay-ms = <0>;                       // 0
+};
 
+&msc {
+  acceleration-exponent = <0>;          // 0
+  time-to-max-speed-ms = <300>;         // 300
+  delay-ms = <0>;                       // 0
+};
 
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
