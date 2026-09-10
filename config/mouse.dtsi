@@ -1,3 +1,7 @@
+// Settings tuned for 3840 x 2160 display resolution
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600 // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
+
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -15,18 +19,40 @@
   delay-ms = <0>;                       // 0
 };
 
+// Mouse movement warp and precision
 &mmv_input_listener {
   warp {
-    //trigger-keys = <LH1>;
-    layers = <NAV>; 
+    layers = <NAV>;
     input-processors = <&zip_xy_scaler 3 1>;
   };
   precision {
-    //trigger-keys = <LH2>;
-    layers = <FN>; // Slows down the mouse whenever this layer is active
+    layers = <FN>;
     input-processors = <&zip_xy_scaler 1 2>;
   };
 };
+
+// Scroll warp and precision
+/ {
+  zip_scroll_scaler: zip_scroll_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+    track-remainders;
+  };
+};
+
+&msc_input_listener {
+  warp {
+    layers = <NAV>;
+    input-processors = <&zip_scroll_scaler 2 1>;
+  };
+  precision {
+    layers = <FN>;
+    input-processors = <&zip_scroll_scaler 1 2>;
+  };
+};
+
 
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
@@ -36,3 +62,7 @@
 #define U_WH_D &msc SCRL_DOWN
 #define U_WH_L &msc SCRL_LEFT
 #define U_WH_R &msc SCRL_RIGHT
+
+#define MKP_L &mkp LCLK
+#define MKP_R &mkp RCLK
+#define MKP_M &mkp MCLK
