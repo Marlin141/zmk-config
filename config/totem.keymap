@@ -17,13 +17,6 @@
 #include <zmk-unicode/keys-full.h>   // All glyphs including CJK
 
 
-// nav 1 // Navigation (arrow keys)
-// fn 2 // F keys
-//num 3 // Numbers
-sys 4 // bt sel stuff
-mouse 5 // Mouse
-
-
 #define DEF    0 // Base layer (normal keyboard)
 #define NUM    1 // Number keys + Navigation
 #define NAV    2 // Just navigation
