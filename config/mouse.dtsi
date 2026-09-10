@@ -17,13 +17,13 @@
 
 &mmv_input_listener {
   warp {
-    trigger-keys = <LH1>;
-    //layers = <NAV>; 
+    //trigger-keys = <LH1>;
+    layers = <NAV>; 
     input-processors = <&zip_xy_scaler 3 1>;
   };
   precision {
-    trigger-keys = <LH2>;
-    //layers = <FN>; // Slows down the mouse whenever this layer is active
+    //trigger-keys = <LH2>;
+    layers = <FN>; // Slows down the mouse whenever this layer is active
     input-processors = <&zip_xy_scaler 1 2>;
   };
 };

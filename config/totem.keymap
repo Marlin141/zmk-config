@@ -16,12 +16,20 @@
 //#include <zmk-unicode/keys-extra.h>  // All glyphs except CJK
 #include <zmk-unicode/keys-full.h>   // All glyphs including CJK
 
-#define DEF       0 // Colemak dh
-#define NUM       1 // Number keys + Navigation
-#define NUM2      2 // Just Navigation (not really used) 
-#define NAV       3 // Mouse movement
-#define FN        4 // Bt + brightness + sound
-#define Game      5 // Never really used
+
+// nav 1 // Navigation (arrow keys)
+// fn 2 // F keys
+//num 3 // Numbers
+sys 4 // bt sel stuff
+mouse 5 // Mouse
+
+
+#define DEF    0 // Base layer (normal keyboard)
+#define NUM    1 // Number keys + Navigation
+#define NAV    2 // Just navigation
+#define FN     3 // System keys (bt, brightness, ect)
+#define MOUSE  4 // Mouse movement + Scrolling
+#define GAME   5 // Never really used 
 
 
 /*                     KEY POSITIONS
@@ -144,12 +152,12 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
 // Smart-mouse.
 ZMK_TRI_STATE(
-    smart_mouse, bindings = <&tog NAV>, <&none>, <&tog NAV>; // MOUSE
+    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions =
         <LT1 LT2 LM1 LM2 LM3 
         RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 
         LH0 LH1 LH2 RH0 RH1 RH2>; 
-    ignored-layers = <NUM NAV FN>;) // MOUSE NAV FN
+    ignored-layers = <MOUSE NAV FN>;)
 
 
 / {
@@ -160,11 +168,11 @@ ZMK_TRI_STATE(
          &kp Q       &kp W       &kp F         &kp P              &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
          &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T      &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 &trans   &kp Z       &kp X       &kp C         &kp D              &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt FN DEL    &lt NUM BACKSPACE  &kp TAB     &kp RET  &lt 1 SPACE     &kp Z
+                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE     &kp Z
             >;
         };
 
-        NUM { // Num + nav
+        NUM {
             bindings = <
         &kp ESC       &kp N7        &kp N8         &kp N9         &trans    &kp CAPS    &kp PG_UP  NAV_UP    &trans     &trans
         &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
@@ -173,21 +181,12 @@ ZMK_TRI_STATE(
             >;
         };
 
-        NUM2 { // Just nav
+        NAV { 
             bindings = <
         &kp LA(F4)  &trans    &kp LS(TAB)  &swapper   &trans    &kp CAPS    &kp PG_UP  NAV_UP    &trans     &trans
         &sk LGUI    &sk LALT  &sk LCTRL    &sk LSHFT  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
 &trans  &trans      &trans    &trans       &kp N3     &trans    &kp TAB     &kp PG_DN  &kp INS   &trans     &trans  &trans
                               &trans       &trans     &trans    &trans      &trans     &trans
-            >;
-        };
-
-        NAV {
-            bindings = <
-        &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans  &kp PG_UP  U_MS_U     &kp PG_DN  &trans
-        &trans  &mkp RCLK  &mkp MCLK    &mkp LCLK  &trans     U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R   
-&trans  &trans  &trans     &trans       &trans     &trans     &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-                           &none        &trans     &trans     U_WH_U  U_WH_D     &trans
             >;
         };
 
@@ -200,7 +199,16 @@ ZMK_TRI_STATE(
             >;
         };
 
-        Game {
+        MOUSE {
+            bindings = <
+        &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans  &kp PG_UP  U_MS_U     &kp PG_DN  &trans
+        &trans  &mkp RCLK  &mkp MCLK    &mkp LCLK  &trans     U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R   
+&trans  &trans  &trans     &trans       &trans     &trans     &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
+                           &trans       &trans     &trans     U_WH_U  U_WH_D     &trans
+            >;
+        };
+
+        GAME {
             bindings = <
         &trans  &trans  &kp W   &trans  &trans    &trans  &trans    &kp UP    &trans     &trans
         &trans  &kp A   &kp S   &kp D   &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
@@ -208,6 +216,5 @@ ZMK_TRI_STATE(
                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
-
     };
 };
