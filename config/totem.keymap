@@ -18,7 +18,7 @@
 
 #define DEF       0 // Colemak dh
 #define NUM       1 // Number keys + Navigation
-#define NUM2      2 // Just Navigation 
+#define NUM2      2 // Just Navigation (not really used) 
 #define NAV       3 // Mouse movement
 #define FN        4 // Bt + brightness + sound
 #define Game      5 // Never really used
@@ -157,11 +157,11 @@ ZMK_TRI_STATE(
         compatible = "zmk,keymap"; 
         DEF {
             bindings = <
-         &kp Q       &kp W       &kp F         &kp P            &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
-         &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T    &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
-&trans   &kp Z       &kp X       &kp C         &kp D            &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt 4 DEL     &lt 2 BACKSPACE  &kp TAB     &kp RET  &lt 1 SPACE     &kp Z
-            >;                /* Func          MOUSE                                 NUM NAV */
+         &kp Q       &kp W       &kp F         &kp P              &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
+         &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T      &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
+&trans   &kp Z       &kp X       &kp C         &kp D              &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
+                                 &lt FN DEL    &lt NUM BACKSPACE  &kp TAB     &kp RET  &lt 1 SPACE     &kp Z
+            >;
         };
 
         NUM { // Num + nav
@@ -187,7 +187,7 @@ ZMK_TRI_STATE(
         &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans  &kp PG_UP  U_MS_U     &kp PG_DN  &trans
         &trans  &mkp RCLK  &mkp MCLK    &mkp LCLK  &trans     U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R   
 &trans  &trans  &trans     &trans       &trans     &trans     &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-                           &trans       &trans     &trans     U_WH_U  U_WH_D     &trans
+                           &none        &trans     &trans     U_WH_U  U_WH_D     &trans
             >;
         };
 
