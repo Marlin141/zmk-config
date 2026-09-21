@@ -84,6 +84,12 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 };
 
 
+// Tap: to mouse-layer | Hold: mouse-layer.
+#define SMART_MOUSE &smart_mouse MOUSE
+ZMK_HOLD_TAP(smart_mouse, bindings = <&mo>; bindings = <&to>; 
+             flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <175>;)
+
+
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
@@ -153,6 +159,8 @@ ZMK_TRI_STATE(
     ignored-layers = <MOUSE NAV FN>;)
 
 
+#define CANCEL  &kp K_CANCEL
+
 / {
     keymap {
         compatible = "zmk,keymap"; 
@@ -161,7 +169,7 @@ ZMK_TRI_STATE(
          &kp Q       &kp W       &kp F         &kp P              &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
          &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T      &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 &trans   &kp Z       &kp X       &kp C         &kp D              &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE     &kp Z
+                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE   SMART_MOUSE
             >;
         };
 
@@ -194,10 +202,10 @@ ZMK_TRI_STATE(
 
         MOUSE {
             bindings = <
-       &trans  &trans     &kp LS(TAB)  &swapper   &trans     &trans  U_WH_U  U_MS_U  U_WH_D  &trans
-       &trans  &trans     &mo NAV      &mo FN     &trans     &trans  U_MS_L  U_MS_D  U_MS_R  MKP_R   
-&none  &trans  &trans     &trans       &trans     &trans     &trans  U_WH_L  MKP_M   U_WH_R  &trans  &none
-                          &trans       &trans     &trans     U_WH_L  MKP_L   U_WH_R
+       &trans  &trans  U_WH_U   &trans    &trans    U_WH_U  U_WH_L  U_MS_U  U_WH_R  &trans
+       &trans  U_MK_R  U_WH_D   U_MK_L    &trans    U_WH_D  U_MS_L  U_MS_D  U_MS_R  &trans   
+&none  &trans  &trans  U_MK_M   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &none
+                       &mo NAV  &mo FN    &none     &trans  &trans  &to DEF 
             >;
         };
 
