@@ -85,9 +85,9 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 
 
 // Tap: to mouse-layer | Hold: mouse-layer.
-#define SMART_MOUSE &smart_mouse MOUSE
-ZMK_HOLD_TAP(smart_mouse, bindings = <&mo>; bindings = <&to>; 
-             flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <175>;)
+#define SMART_MOUSE &smart_mouse MOUSE 0
+ZMK_HOLD_TAP(smart_mouse, bindings = <&mo>, <&to>; flavor = "balanced"; 
+    tapping-term-ms = <200>; quick-tap-ms = <175>;)
 
 
 // Define mod-morph with a *single* mod trigger for less repetition.
