@@ -35,7 +35,7 @@ ZMK_LEADER_SEQUENCE(el_kappa,   &uc UC_EL_KAPPA,      N K)  // κ
 ZMK_LEADER_SEQUENCE(el_lambda,  &uc UC_EL_LAMBDA,     N L)  // λ
 ZMK_LEADER_SEQUENCE(el_sigma,   &uc UC_EL_SIGMA,      N S)  // σ
 ZMK_LEADER_SEQUENCE(el_upsilon, &uc UC_EL_UPSILON,    N U)  // υ
-ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      N W)  // ω
+ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      N O)  // ω
 ZMK_LEADER_SEQUENCE(el_pi,      &uc UC_EL_PI,         N P)  // π
 
 /*
