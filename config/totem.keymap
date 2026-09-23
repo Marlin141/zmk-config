@@ -32,8 +32,16 @@
   ╰───╮ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 ╭───╯
       ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
               ╰─────────────╯ ╰─────────────╯ */
+             
+&sk {
+  release-after-ms = <900>;
+  quick-release;
+};
 
-              
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
+
 &lt {
   flavor = "balanced";
   tapping-term-ms = <200>;
@@ -105,12 +113,25 @@ ZMK_HOLD_TAP(smart_num,
 
 // Personal Tap: toggle mouse-layer | Hold: momentairy mouse-layer
 //      name                     hold  tap 
+/*
 #define SMART_MOUSE &smart_mouse MOUSE MOUSE
 ZMK_HOLD_TAP(smart_mouse, 
     bindings = <&mo MOUSE>, <&tog MOUSE>; 
-    flavor = "balanced"; 
+    //flavor = "balanced"; 
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
+)
+*/
+
+#define SMART_MOUSE &smart_mouse &mo MOUSE &tog MOUSE
+ZMK_HOLD_TAP(smart_mouse,
+    flavor = "balanced";
+    tapping-term-ms = <200>; // 280
+    quick-tap-ms = <175>
+    //require-prior-idle-ms = <150>;
+    //hold-trigger-key-positions = <KEYS_L THUMBS>;
+    //hold-trigger-on-release;
+    bindings = <&kp, <kp>;
 )
 
 
@@ -227,9 +248,9 @@ ZMK_TRI_STATE(
         MOUSE {
             bindings = <
        &trans  &trans  U_WH_U   &trans    &trans    U_WH_U  U_WH_L  U_MS_U  U_WH_R  &trans
-       &trans  U_MK_R  U_WH_D   U_MK_L    &trans    U_WH_D  U_MS_L  U_MS_D  U_MS_R  &trans   
-&none  &trans  &trans  U_MK_M   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &none
-                       &mo NAV  &mo FN    &none     &trans  &trans  &to DEF 
+       &trans  U_BTNR  U_WH_D   U_BTNL    &trans    U_WH_D  U_MS_L  U_MS_D  U_MS_R  &trans   
+&none  &trans  &trans  U_BTNM   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &none
+                       &mo NAV  &mo FN    &none     &trans  &trans  &trans 
             >;
         };
 
