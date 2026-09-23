@@ -113,17 +113,17 @@ ZMK_HOLD_TAP(smart_num,
 
 // Personal Tap: toggle mouse-layer | Hold: momentairy mouse-layer
 //      name                     hold  tap 
-/*
+
 #define SMART_MOUSE &smart_mouse MOUSE MOUSE
 ZMK_HOLD_TAP(smart_mouse, 
-    bindings = <&mo MOUSE>, <&tog MOUSE>; 
-    //flavor = "balanced"; 
+    bindings = <&mo>, <&tog>; 
+    flavor = "balanced"; 
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
 )
-*/
 
 
+/*
 ZMK_HOLD_TAP(smart_mouse,
     flavor = "balanced";
     tapping-term-ms = <200>; 
@@ -133,7 +133,7 @@ ZMK_HOLD_TAP(smart_mouse,
 
 
 #define SMART_MOUSE &smart_mouse MOUSE MOUSE
-
+*/
 
 //require-prior-idle-ms = <150>;
     //hold-trigger-key-positions = <KEYS_L THUMBS>;
