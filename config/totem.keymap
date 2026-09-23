@@ -124,15 +124,17 @@ ZMK_HOLD_TAP(smart_mouse,
 */
 
 #define SMART_MOUSE &smart_mouse &mo MOUSE &tog MOUSE
-ZMK_HOLD_TAP(smart_mouse,
+ZMK_HOLD_TAP(smart_mouse;
     flavor = "balanced";
-    tapping-term-ms = <200>; // 280
+    tapping-term-ms = <200>; 
     quick-tap-ms = <175>;
-    //require-prior-idle-ms = <150>;
-    //hold-trigger-key-positions = <KEYS_L THUMBS>;
-    //hold-trigger-on-release;
     bindings = <&kp, <kp>;
 )
+
+//require-prior-idle-ms = <150>;
+    //hold-trigger-key-positions = <KEYS_L THUMBS>;
+    //hold-trigger-on-release;
+    // 280
 
 
 // Define mod-morph with a *single* mod trigger for less repetition.
