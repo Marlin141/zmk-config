@@ -211,8 +211,6 @@ ZMK_TRI_STATE(
     ignored-layers = <MOUSE NAV FN>;)
 */
 
-#define CANCEL  &kp K_CANCEL
-
 / {
     keymap {
         compatible = "zmk,keymap"; 
@@ -221,7 +219,7 @@ ZMK_TRI_STATE(
          &kp Q       &kp W       &kp F         &kp P              &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
          &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T      &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 &trans   &kp Z       &kp X       &kp C         &kp D              &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE   &kp Z
+                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE   SMART_MOUSE
             >;
         };
 
