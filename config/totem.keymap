@@ -124,11 +124,11 @@ ZMK_HOLD_TAP(smart_mouse,
 */
 
 #define SMART_MOUSE &smart_mouse &mo MOUSE &tog MOUSE
-ZMK_HOLD_TAP(smart_mouse;
+ZMK_HOLD_TAP(smart_mouse,
     flavor = "balanced";
     tapping-term-ms = <200>; 
     quick-tap-ms = <175>;
-    bindings = <&kp, <kp>;
+    bindings = <&kp, <&kp>;
 )
 
 //require-prior-idle-ms = <150>;
