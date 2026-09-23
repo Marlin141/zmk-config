@@ -67,15 +67,6 @@ MAKE_HRM(hmls, &kp, &kp, 200, KEYS_R THUMBS) // Left-hand shift
 MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 
 
-#define SMART_MOUSE &smart_mouse &mo MOUSE &tog MOUSE
-ZMK_HOLD_TAP(smart_mouse,
-    flavor = "balanced";
-    tapping-term-ms = <200>; 
-    quick-tap-ms = <175>;
-    bindings = <&kp>, <&kp>;
-)
-
-
 // Make HRM combos tap-only (makes combos better)
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, 150, SIDE THUMBS)                        \
@@ -132,6 +123,16 @@ ZMK_HOLD_TAP(smart_mouse,
 )
 */
 
+
+ZMK_HOLD_TAP(smart_mouse,
+    flavor = "balanced";
+    tapping-term-ms = <200>; 
+    quick-tap-ms = <175>;
+    bindings = <&mo>, <&tog>;
+)
+
+
+#define SMART_MOUSE &smart_mouse MOUSE MOUSE
 
 
 //require-prior-idle-ms = <150>;
@@ -220,7 +221,7 @@ ZMK_TRI_STATE(
          &kp Q       &kp W       &kp F         &kp P              &kp B       &kp J    &kp L           &kp U         &kp Y       &kp SQT
          &hml LGUI A &hml LALT R &hml LCTRL S  &hmls LSHFT T      &kp G       &kp M    &hmrs RSHFT N   &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 &trans   &kp Z       &kp X       &kp C         &kp D              &kp V       &kp K    &kp H           &comma_morph  &dot_morph  &excl_morph   &trans
-                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE   SMART_MOUSE
+                                 &lt FN DEL    &lt NAV BACKSPACE  &kp TAB     &kp RET  &lt NUM SPACE   &kp Z
             >;
         };
 
