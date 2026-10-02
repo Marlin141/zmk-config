@@ -85,7 +85,7 @@ ZMK_LEADER_SEQUENCE(fn_f10, &kp F10, F V)
 ZMK_LEADER_SEQUENCE(fn_f11, &kp F11, F G)
 ZMK_LEADER_SEQUENCE(fn_f12, &kp F12, F B)
 
-/* (3) BLE and USB*/
+/* (3) BLE and USB */
 ZMK_LEADER_SEQUENCE(clear,      &bt BT_CLR,     C L E A R)
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
 ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
