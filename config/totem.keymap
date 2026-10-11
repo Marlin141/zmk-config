@@ -92,6 +92,18 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
 };
 
 
+/* Custom Caps Lock Word using urob-style ZMK_BEHAVIOR helper */
+ZMK_BEHAVIOR(caps_lock_word, caps_word,
+    /* Replaces virtual Shift with physical OS Caps Lock toggles */
+    mods = <CAPS>;
+    
+    /* urob's default alphanumeric continuation preferences */
+    continue-list = <
+      UNDERSCORE MINUS BACKSPACE
+    >;
+)
+
+
 /*
 // Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
 #define SMART_NUM &smart_num NUM 0
@@ -191,10 +203,10 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
         NUM {
             bindings = <
-        &kp ESC       &kp N7        &kp N8         &kp N9         &trans    &kp CAPS    &kp PG_UP  NAV_UP    &trans     &trans
-        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
-&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &kp TAB     &kp PG_DN  &kp INS   &trans     &trans  &trans
-                                    &trans         &trans         &trans    &trans      &trans     &trans
+        &kp ESC       &kp N7        &kp N8         &kp N9         &trans    &kp CAPS         &kp PG_UP  NAV_UP    &trans     &trans
+        &hml LGUI N0  &hml LALT N4  &hml LCTRL N5  &hml LSHFT N6  &trans    &caps_lock_word  NAV_LEFT   NAV_DOWN  NAV_RIGHT  &kp RET
+&trans  &trans        &kp N1        &kp N2         &kp N3         &trans    &kp TAB          &kp PG_DN  &kp INS   &trans     &trans  &trans
+                                    &trans         &trans         &trans    &trans           &trans     &trans
             >;
         };
 
@@ -218,10 +230,10 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
         MOUSE {
             bindings = <
-       &trans  &trans  U_WH_U   &trans    &trans    &trans  U_WH_L  U_MS_U  U_WH_R  &trans
-       &trans  U_BTNR  U_WH_D   U_BTNL    &trans    &trans  U_MS_L  U_MS_D  U_MS_R  &trans   
-&none  &trans  &trans  U_BTNM   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &none
-                       &mo FN   &mo NAV   &none     &trans  &trans  &trans 
+       &trans  &trans  MSC_U   &trans   &trans    &trans  MSC_L   MMV_U   MSC_R   &trans
+       &trans  MKP_R   MSC_D   MKP_L    &trans    &trans  MMV_L   MMV_D   MMV_R   &trans   
+&none  &trans  &trans  MKP_M   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &none
+                       &mo FN  &mo NAV  &none     &trans  &trans  &trans 
             >;
         };
 
