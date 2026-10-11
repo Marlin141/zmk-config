@@ -31,5 +31,11 @@ manifest:
     - name: zmk-tri-state
       remote: urob
       revision: 2007896c6d5bfb519e8babccf8633841c5647d8b # main (4/19/2026)
+    #- name: zmk-adaptive-key
+    #  path: modules/zmk/adaptive-key
+    #  revision: e5b335a7b1076cb122582f5a892b118b02a3be34 # test
+    #- name: zmk-auto-layer
+    #  path: modules/zmk/auto-layer
+    #  revision: 62c201934711369d50a28df12e1d055d05cb6460 # test 
   self:
     path: config
