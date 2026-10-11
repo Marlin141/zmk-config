@@ -91,15 +91,14 @@ MAKE_HRM(hmrs, &kp, &kp, 200, KEYS_L THUMBS) // Right-hand shift
     >;
 };
 
-
 /* Custom Caps Lock Word using urob-style ZMK_BEHAVIOR helper */
 ZMK_BEHAVIOR(caps_lock_word, caps_word,
     /* Replaces virtual Shift with physical OS Caps Lock toggles */
-    mods = <CAPS>;
+    mods = <MOD_CLCK>;      
     
     /* urob's default alphanumeric continuation preferences */
     continue-list = <
-      UNDERSCORE MINUS BACKSPACE
+       UNDERSCORE MINUS BACKSPACE
     >;
 )
 
@@ -114,7 +113,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 */
 
               
-// Tap: toggle mouse-layer | Hold: momentairy mouse-layer
+// Hold: momentairy mouse-layer | Tap: toggle mouse-layer (toggles off with a non mouse keypress)
 #define SMART_MOUSE &smart_mouse MOUSE 0 //MOUSE
 ZMK_HOLD_TAP(smart_mouse, 
     bindings = <&mo>, <&temp_mouse>; //<&tog>; 
@@ -233,7 +232,7 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
        &trans  &trans  MSC_U   &trans   &trans    &trans  MSC_L   MMV_U   MSC_R   &trans
        &trans  MKP_R   MSC_D   MKP_L    &trans    &trans  MMV_L   MMV_D   MMV_R   &trans   
 &none  &trans  &trans  MKP_M   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &none
-                       &mo FN  &mo NAV  &none     &trans  &trans  &trans 
+                       &mo FN  &mo NAV  &trans    &trans  &trans  &trans 
             >;
         };
 
@@ -246,4 +245,4 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             >;
         };
     };
-};
+}; 
