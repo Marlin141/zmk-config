@@ -248,7 +248,7 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
        &trans  &trans  MSC_U   &trans   &trans    &trans  MSC_L   MMV_U   MSC_R   &trans
        &trans  MKP_R   MSC_D   MKP_L    &trans    &trans  MMV_L   MMV_D   MMV_R   &trans   
 &none  &trans  &trans  MKP_M   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &none
-                       &mo FN  &mo NAV  &trans    &trans  &trans  &trans 
+                       &mo FN  &mo NAV  &trans    &trans  &trans  &none 
             >;
         };
 
